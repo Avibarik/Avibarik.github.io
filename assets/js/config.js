@@ -8,28 +8,28 @@
 const PORTFOLIO_CONFIG = {
   // Personal Info
   personal: {
-    name: "Alex Morgan",
-    role: "Full Stack Developer & Open Source Enthusiast",
+    name: "Avi Barik",
+    role: "Full Stack Developer & Software Engineer",
     titles: [
       "Full Stack Developer",
-      "Cloud & DevOps Practitioner",
-      "UI/UX Craftsperson",
-      "Open Source Contributor"
+      "Software Engineer",
+      "Open Source Contributor",
+      "Web Architect"
     ],
-    bio: "Passionate developer crafting modern, high-performance web applications and distributed systems. Committed to writing clean, maintainable code with delightful user experiences.",
+    bio: "Passionate software engineer building modern, responsive web applications and scalable digital solutions. Committed to clean code, performance, and great user experiences.",
     avatar: "assets/images/avatar-placeholder.svg",
-    location: "San Francisco, CA / Remote",
+    location: "Remote / Open to Relocation",
     statusBadge: "Available for new opportunities",
     resumeUrl: "#", // Link to your resume PDF or Google Drive
   },
 
   // Social Links
   socials: {
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/",
-    twitter: "https://twitter.com/",
-    email: "mailto:alex.morgan.dev@example.com",
-    blog: "https://dev.to/"
+    github: "https://github.com/avibarik",
+    linkedin: "https://linkedin.com/in/avibarik",
+    twitter: "https://twitter.com/avibarik",
+    email: "mailto:contact@avibarik.github.io",
+    blog: "https://avibarik.github.io"
   },
 
   // Key Highlight Stats
@@ -93,7 +93,7 @@ const PORTFOLIO_CONFIG = {
       tags: ["TypeScript", "React", "Node.js", "Tailwind CSS", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
       liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/example/devpulse",
+      githubUrl: "https://github.com/avibarik/devpulse",
       featured: true
     },
     {
@@ -104,7 +104,7 @@ const PORTFOLIO_CONFIG = {
       tags: ["Python", "FastAPI", "React", "AWS S3", "Docker"],
       image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
       liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/example/cloudvault",
+      githubUrl: "https://github.com/avibarik/cloudvault",
       featured: true
     },
     {
@@ -115,7 +115,7 @@ const PORTFOLIO_CONFIG = {
       tags: ["Next.js", "Tailwind CSS", "Zustand", "WebSockets"],
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
       liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/example/taskflow",
+      githubUrl: "https://github.com/avibarik/taskflow",
       featured: true
     },
     {
@@ -126,7 +126,7 @@ const PORTFOLIO_CONFIG = {
       tags: ["Go", "OpenAI API", "CLI", "Shell"],
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
       liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/example/codesnippet-ai",
+      githubUrl: "https://github.com/avibarik/codesnippet-ai",
       featured: false
     }
   ],
