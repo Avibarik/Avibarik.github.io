@@ -1,5 +1,5 @@
 /**
- * Main Application Logic
+ * Main Application Logic - Hardware & ECE Portfolio
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
 
   // 2. Typing Effect for Hero Title
-  initTypingEffect(config.personal?.titles || ["Full Stack Developer"]);
+  initTypingEffect(config.personal?.titles || ["ECE Undergraduate", "VLSI Designer"]);
 
   // 3. Hydrate Dynamic Content from Config
   hydratePortfolio(config);
@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. Mobile Navigation Menu
   initMobileMenu();
 
-  // 6. Contact Form Simulation
-  initContactForm();
-
-  // 7. Active Nav Link on Scroll
+  // 6. Active Nav Link on Scroll
   initScrollSpy();
+
+  // 7. Copy Email Clipboard Helper
+  initCopyEmail();
 
   // Refresh icons after dynamic hydration
   if (typeof lucide !== "undefined") {
@@ -69,9 +69,9 @@ function initTypingEffect(words) {
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  const typeSpeed = 100;
-  const deleteSpeed = 50;
-  const delayBetweenWords = 2000;
+  const typeSpeed = 80;
+  const deleteSpeed = 45;
+  const delayBetweenWords = 2200;
 
   function type() {
     const currentWord = words[wordIndex];
@@ -92,7 +92,7 @@ function initTypingEffect(words) {
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
-      delta = 500;
+      delta = 450;
     }
 
     setTimeout(type, delta);
@@ -137,6 +137,15 @@ function hydratePortfolio(config) {
     setHref("social-linkedin", s.linkedin);
     setHref("social-twitter", s.twitter);
     setHref("social-email", s.email);
+
+    // Direct Contact Section
+    setHref("contact-card-github", s.github);
+    setHref("contact-card-linkedin", s.linkedin);
+    setHref("contact-card-twitter", s.twitter);
+    setHref("contact-card-email", s.email);
+    setText("contact-display-email", s.displayEmail || s.email.replace("mailto:", ""));
+
+    // Footer
     setHref("footer-github", s.github);
     setHref("footer-linkedin", s.linkedin);
     setHref("footer-twitter", s.twitter);
@@ -148,7 +157,7 @@ function hydratePortfolio(config) {
     const statsContainer = document.getElementById("stats-container");
     if (statsContainer) {
       statsContainer.innerHTML = config.stats.map(stat => `
-        <div class="glass-panel p-5 rounded-2xl text-center hover-lift">
+        <div class="glass-panel p-5 rounded-2xl text-center hover-lift border border-slate-800">
           <div class="text-3xl md:text-4xl font-extrabold gradient-text mb-1">${stat.value}</div>
           <div class="text-sm text-slate-400 font-medium">${stat.label}</div>
         </div>
@@ -161,10 +170,10 @@ function hydratePortfolio(config) {
     const skillsContainer = document.getElementById("skills-container");
     if (skillsContainer) {
       skillsContainer.innerHTML = config.skills.map(group => `
-        <div class="glass-panel p-6 rounded-2xl hover-lift">
+        <div class="glass-panel p-6 rounded-2xl hover-lift border border-slate-800">
           <div class="flex items-center gap-3 mb-5">
             <span class="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              <i data-lucide="code-2" class="w-5 h-5"></i>
+              <i data-lucide="cpu" class="w-5 h-5"></i>
             </span>
             <h3 class="text-xl font-bold text-white">${group.category}</h3>
           </div>
@@ -215,21 +224,29 @@ function renderProjects(projects, filterCategory = "All") {
 
   container.innerHTML = filtered.map(p => `
     <div class="glass-panel rounded-2xl overflow-hidden hover-lift flex flex-col group border border-slate-800" data-category="${p.category}">
-      <div class="relative h-48 overflow-hidden bg-slate-800">
+      <div class="relative h-52 overflow-hidden bg-slate-900">
         <img 
           src="${p.image}" 
           alt="${p.title}" 
-          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          class="w-full h-full object-contain bg-slate-950/70 p-2 group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-        <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 backdrop-blur-md text-blue-400 border border-blue-500/30">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/85 backdrop-blur-md text-blue-400 border border-blue-500/30">
           ${p.category}
         </span>
       </div>
 
       <div class="p-6 flex flex-col flex-1">
         <h4 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">${p.title}</h4>
+        
+        ${p.metrics ? `
+          <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded-md mb-3 w-fit">
+            <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+            <span>${p.metrics}</span>
+          </div>
+        ` : ""}
+
         <p class="text-slate-400 text-sm mb-5 leading-relaxed flex-1">${p.description}</p>
 
         <div class="flex flex-wrap gap-1.5 mb-6">
@@ -241,14 +258,14 @@ function renderProjects(projects, filterCategory = "All") {
         </div>
 
         <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
-          ${p.liveUrl ? `
-            <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+          ${p.githubUrl ? `
+            <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl transition-colors">
+              <i data-lucide="github" class="w-4 h-4"></i> Repository
             </a>
           ` : ""}
-          ${p.githubUrl ? `
-            <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700 transition-colors">
-              <i data-lucide="github" class="w-4 h-4"></i> Code
+          ${p.liveUrl ? `
+            <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700 transition-colors">
+              <i data-lucide="file-text" class="w-4 h-4"></i> Documentation
             </a>
           ` : ""}
         </div>
@@ -296,12 +313,7 @@ function initMobileMenu() {
   if (!toggleBtn || !mobileMenu) return;
 
   toggleBtn.addEventListener("click", () => {
-    const isHidden = mobileMenu.classList.contains("hidden");
-    if (isHidden) {
-      mobileMenu.classList.remove("hidden");
-    } else {
-      mobileMenu.classList.add("hidden");
-    }
+    mobileMenu.classList.toggle("hidden");
   });
 
   mobileLinks.forEach(link => {
@@ -312,42 +324,26 @@ function initMobileMenu() {
 }
 
 /**
- * Contact Form Simulation with notification
+ * Copy Email to Clipboard Helper
  */
-function initContactForm() {
-  const form = document.getElementById("contact-form");
-  const formStatus = document.getElementById("form-status");
+function initCopyEmail() {
+  const copyBtn = document.getElementById("copy-email-btn");
+  const copyToast = document.getElementById("copy-email-toast");
 
-  if (!form) return;
+  if (!copyBtn) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn ? submitBtn.innerHTML : "Send Message";
+  copyBtn.addEventListener("click", () => {
+    const config = window.PORTFOLIO_CONFIG || {};
+    const email = config.socials?.displayEmail || "barikavinash2003@gmail.com";
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending...</span>`;
-    }
-
-    setTimeout(() => {
-      if (formStatus) {
-        formStatus.classList.remove("hidden");
-        formStatus.innerHTML = `
-          <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center gap-3">
-            <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i>
-            <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
-          </div>
-        `;
-        if (typeof lucide !== "undefined") lucide.createIcons();
+    navigator.clipboard.writeText(email).then(() => {
+      if (copyToast) {
+        copyToast.classList.remove("hidden");
+        setTimeout(() => {
+          copyToast.classList.add("hidden");
+        }, 2000);
       }
-
-      form.reset();
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }
-    }, 1000);
+    });
   });
 }
 

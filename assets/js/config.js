@@ -1,26 +1,25 @@
 /**
- * PORTFOLIO CONFIGURATION
+ * PORTFOLIO CONFIGURATION - AVINASH BARIK
  * 
- * Edit this file to customize your portfolio content!
- * Changes made here will automatically reflect across your portfolio site.
+ * Hardware, VLSI, RISC-V & Embedded Systems Portfolio
  */
 
 const PORTFOLIO_CONFIG = {
   // Personal Info
   personal: {
-    name: "Avi Barik",
-    role: "Full Stack Developer & Software Engineer",
+    name: "Avinash Barik",
+    role: "ECE Student | VLSI, RISC-V & Embedded Systems",
     titles: [
-      "Full Stack Developer",
-      "Software Engineer",
-      "Open Source Contributor",
-      "Web Architect"
+      "ECE Undergraduate",
+      "VLSI & Digital Design Enthusiast",
+      "RISC-V Computer Architecture",
+      "FPGA & Hardware Engineer"
     ],
-    bio: "Passionate software engineer building modern, responsive web applications and scalable digital solutions. Committed to clean code, performance, and great user experiences.",
-    avatar: "assets/images/avatar-placeholder.svg",
-    location: "Remote / Open to Relocation",
-    statusBadge: "Available for new opportunities",
-    resumeUrl: "#", // Link to your resume PDF or Google Drive
+    bio: "Electronics & Communication Engineering (ECE) student specializing in digital IC design, computer architecture, and embedded systems. Experienced in designing synthesizable processor architectures with Verilog HDL, performing static timing analysis (STA), and deploying designs onto Intel Cyclone V FPGAs.",
+    avatar: "assets/images/chip-graphic.svg",
+    location: "India | Open to Remote & On-site Hardware Roles",
+    statusBadge: "Open to VLSI / Embedded Hardware Opportunities",
+    resumeUrl: "#", // Update with your resume link
   },
 
   // Social Links
@@ -28,57 +27,58 @@ const PORTFOLIO_CONFIG = {
     github: "https://github.com/avibarik",
     linkedin: "https://linkedin.com/in/avibarik",
     twitter: "https://twitter.com/avibarik",
-    email: "mailto:contact@avibarik.github.io",
-    blog: "https://avibarik.github.io"
+    email: "mailto:barikavinash2003@gmail.com", // You can update with your exact email
+    displayEmail: "barikavinash2003@gmail.com"
   },
 
-  // Key Highlight Stats
+  // Key Hardware Highlights / Stats
   stats: [
-    { label: "Years of Experience", value: "3+" },
-    { label: "Completed Projects", value: "25+" },
-    { label: "GitHub Contributions", value: "850+" },
-    { label: "Coffee Cups", value: "1,200+" }
+    { label: "FPGA Max Clock (Fmax)", value: "92.78 MHz" },
+    { label: "Datapath Architecture", value: "32-Bit RV32I" },
+    { label: "Timing Slack (SDC)", value: "+9.22 ns" },
+    { label: "Target FPGA Device", value: "Cyclone V" }
   ],
 
-  // Skills organized by category
+  // Skills organized by Hardware / VLSI domain
   skills: [
     {
-      category: "Frontend",
+      category: "Hardware Description & Verification",
       items: [
-        { name: "JavaScript / TypeScript", level: "Advanced" },
-        { name: "React / Next.js", level: "Advanced" },
-        { name: "Tailwind CSS", level: "Expert" },
-        { name: "HTML5 & CSS3", level: "Expert" },
-        { name: "Redux / Zustand", level: "Intermediate" }
+        { name: "Verilog HDL (Synthesizable)", level: "Advanced" },
+        { name: "SystemVerilog (Basics)", level: "Intermediate" },
+        { name: "Testbench Writing", level: "Advanced" },
+        { name: "Icarus Verilog (iverilog)", level: "Advanced" },
+        { name: "GTKWave & VCD Waveform Analysis", level: "Advanced" }
       ]
     },
     {
-      category: "Backend & APIs",
+      category: "Digital Design & Computer Architecture",
       items: [
-        { name: "Node.js / Express", level: "Advanced" },
-        { name: "Python / FastAPI", level: "Intermediate" },
-        { name: "RESTful & GraphQL APIs", level: "Advanced" },
-        { name: "PostgreSQL & Prisma", level: "Advanced" },
-        { name: "MongoDB & Redis", level: "Intermediate" }
+        { name: "RISC-V Architecture (RV32I)", level: "Advanced" },
+        { name: "Single-Cycle & Pipelined Datapath", level: "Advanced" },
+        { name: "ALU, Decoders & Register File", level: "Advanced" },
+        { name: "Read-After-Write (RAW) Hazard Handling", level: "Intermediate" },
+        { name: "FSM & Control Unit Design", level: "Advanced" }
       ]
     },
     {
-      category: "DevOps & Cloud",
+      category: "EDA Tools & FPGA Synthesis",
       items: [
-        { name: "Git & GitHub Actions", level: "Advanced" },
-        { name: "Docker & Containers", level: "Intermediate" },
-        { name: "AWS / Vercel / Netlify", level: "Advanced" },
-        { name: "Linux & Bash", level: "Advanced" },
-        { name: "CI/CD Pipelines", level: "Intermediate" }
+        { name: "Intel Quartus Prime (Lite 25.1)", level: "Advanced" },
+        { name: "TimeQuest Static Timing Analysis (STA)", level: "Advanced" },
+        { name: "Synopsys Design Constraints (SDC)", level: "Advanced" },
+        { name: "Intel Cyclone V (5CSEBA6U19C6)", level: "Advanced" },
+        { name: "ModelSim / QuestaSim", level: "Intermediate" }
       ]
     },
     {
-      category: "Tools & Methodologies",
+      category: "Embedded Systems & Electronics",
       items: [
-        { name: "Agile / Scrum", level: "Experienced" },
-        { name: "Jest / Vitest / Playwright", level: "Intermediate" },
-        { name: "Figma UI/UX Design", level: "Intermediate" },
-        { name: "VS Code & Postman", level: "Expert" }
+        { name: "C / Embedded C", level: "Advanced" },
+        { name: "Python for Hardware Automation", level: "Intermediate" },
+        { name: "Serial Protocols (UART / SPI / I2C)", level: "Intermediate" },
+        { name: "Linear Integrated Circuits (LIC)", level: "Intermediate" },
+        { name: "Analog Electronics & Control Systems", level: "Intermediate" }
       ]
     }
   ],
@@ -86,70 +86,56 @@ const PORTFOLIO_CONFIG = {
   // Featured Projects
   projects: [
     {
-      id: "project-1",
-      title: "DevPulse - Developer Analytics Dashboard",
-      category: "Full Stack",
-      description: "A centralized real-time telemetry dashboard for software engineering teams tracking PR velocity, sprint metrics, and deployment health.",
-      tags: ["TypeScript", "React", "Node.js", "Tailwind CSS", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/avibarik/devpulse",
-      featured: true
+      id: "project-riscv",
+      title: "32-Bit Single-Cycle RISC-V (RV32I) Processor",
+      category: "Computer Architecture",
+      description: "A complete synthesizable 32-bit RISC-V integer core written in Verilog HDL. Features a Harvard architecture, 32-entry dual-read register file, two-level control decoding (Main + ALU Decoder), and signed overflow correction. Synthesized and placed-and-routed on an Intel Cyclone V FPGA achieving 92.78 MHz Fmax with zero timing violations and +9.22 ns slack.",
+      tags: ["Verilog HDL", "RISC-V (RV32I)", "Intel Quartus Prime", "Cyclone V FPGA", "SDC Timing Closure", "GTKWave"],
+      image: "assets/images/riscv-datapath.png",
+      liveUrl: "https://github.com/avibarik/RISC---V",
+      githubUrl: "https://github.com/avibarik/RISC---V",
+      featured: true,
+      metrics: "92.78 MHz Fmax | 186 ALMs | 334 Regs"
     },
     {
-      id: "project-2",
-      title: "CloudVault - End-to-End Encrypted File Storage",
-      category: "Cloud / DevOps",
-      description: "Zero-knowledge encrypted cloud storage application featuring client-side cryptographic hashing, granular file sharing, and auto-sync.",
-      tags: ["Python", "FastAPI", "React", "AWS S3", "Docker"],
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
-      liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/avibarik/cloudvault",
-      featured: true
+      id: "project-verification",
+      title: "RISC-V Functional Verification & Waveform Analysis",
+      category: "Digital Verification",
+      description: "Modular verification testbench suite exercising arithmetic operations (ADD, SUB), logical bitwise manipulation (AND, OR), signed branch conditions (SLT), and Read-After-Write (RAW) data hazard dependencies loaded dynamically via $readmemh hex memory files.",
+      tags: ["Icarus Verilog", "GTKWave", "VCD Dump", "Hazard Verification", "Assembly Test"],
+      image: "assets/images/riscv-waveform.png",
+      liveUrl: "https://github.com/avibarik/RISC---V#testing-and-verification",
+      githubUrl: "https://github.com/avibarik/RISC---V",
+      featured: true,
+      metrics: "8 Instructions Verified | Zero Hazards"
     },
     {
-      id: "project-3",
-      title: "TaskFlow - Collaborative KanBan Workspace",
-      category: "Frontend",
-      description: "Fast, keyboard-first task management application with drag-and-drop boards, live multi-user collaboration, and markdown preview.",
-      tags: ["Next.js", "Tailwind CSS", "Zustand", "WebSockets"],
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
-      liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/avibarik/taskflow",
-      featured: true
-    },
-    {
-      id: "project-4",
-      title: "CodeSnippet AI - Contextual Code Assistant CLI",
-      category: "AI / Tooling",
-      description: "Command line developer utility that generates boilerplate, explains complex regex patterns, and writes automated unit tests.",
-      tags: ["Go", "OpenAI API", "CLI", "Shell"],
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
-      liveUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/avibarik/codesnippet-ai",
-      featured: false
+      id: "project-ic-graphic",
+      title: "VLSI Architecture & Microarchitecture Exploration",
+      category: "VLSI / Digital IC",
+      description: "Exploration of modular sub-blocks including 32-bit parameterized multiplexers, immediate sign-extension generators (I-type, S-type, B-type), asynchronous PC adders, and Harvard architecture memory buses designed for ASIC and FPGA flows.",
+      tags: ["Digital IC", "Microarchitecture", "Verilog", "RTL Design"],
+      image: "assets/images/chip-graphic.svg",
+      liveUrl: "https://github.com/avibarik",
+      githubUrl: "https://github.com/avibarik",
+      featured: false,
+      metrics: "Area-efficient RTL"
     }
   ],
 
-  // Work & Education Experience Timeline
+  // Academic and Engineering Journey
   experiences: [
     {
-      period: "2023 - Present",
-      role: "Full Stack Software Engineer",
-      company: "TechNova Solutions",
-      description: "Spearheaded the redesign of enterprise client portal improving loading speeds by 40%. Implemented secure microservices and automated CI/CD deployment pipelines."
+      period: "Undergraduate (Current)",
+      role: "B.Tech in Electronics & Communication Engineering (ECE)",
+      company: "Core Focus: VLSI & Digital System Design",
+      description: "Coursework and hands-on lab projects spanning Digital Electronics, Computer Organization & Architecture, Linear Integrated Circuits (LIC), Microprocessors & Microcontrollers, Signals & Systems, and Control Systems."
     },
     {
-      period: "2021 - 2023",
-      role: "Frontend Developer",
-      company: "Creative Labs Interactive",
-      description: "Built responsive, accessible web interfaces for clients ranging from startups to Fortune 500 companies using modern component libraries."
-    },
-    {
-      period: "2017 - 2021",
-      role: "B.S. in Computer Science",
-      company: "State University",
-      description: "Focused on Software Engineering, Data Structures, Algorithms, and Distributed Systems. Dean's Honor List."
+      period: "Hardware Project",
+      role: "Digital Design & FPGA Synthesis Engineer",
+      company: "Single-Cycle RISC-V Processor Core",
+      description: "Designed from ground up in Verilog HDL. Verified architectural accuracy with iverilog/GTKWave. Implemented SDC timing constraints in Quartus Prime, achieving 92.78 MHz clock closure on Intel Cyclone V FPGA."
     }
   ]
 };

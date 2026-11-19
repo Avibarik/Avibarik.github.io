@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgRing" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#0f172a" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.95" />
+    </radialGradient>
+
+    <!-- Metallic Chip Shading -->
+    <linearGradient id="chipMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="goldPin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <linearGradient id="neonTrace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow Base -->
+  <rect width="600" height="600" rx="36" fill="url(#bgRing)" />
+
+  <!-- PCB Circuit Grid Traces -->
+  <g stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.2" fill="none">
+    <path d="M 40 100 H 160 L 200 140 H 220" />
+    <path d="M 40 150 H 140 L 180 190 H 220" />
+    <path d="M 40 220 H 220" />
+    <path d="M 40 380 H 220" />
+    <path d="M 40 450 H 140 L 180 410 H 220" />
+
+    <path d="M 560 100 H 440 L 400 140 H 380" />
+    <path d="M 560 150 H 460 L 420 190 H 380" />
+    <path d="M 560 220 H 380" />
+    <path d="M 560 380 H 380" />
+    <path d="M 560 450 H 460 L 420 410 H 380" />
+
+    <path d="M 100 40 V 160 L 140 200 V 220" />
+    <path d="M 220 40 V 220" />
+    <path d="M 380 40 V 220" />
+    <path d="M 500 40 V 160 L 460 200 V 220" />
+
+    <path d="M 100 560 V 440 L 140 400 V 380" />
+    <path d="M 220 560 V 380" />
+    <path d="M 380 560 V 380" />
+    <path d="M 500 560 V 440 L 460 400 V 380" />
+  </g>
+
+  <!-- Trace Via Dots -->
+  <g fill="#38bdf8" opacity="0.4">
+    <circle cx="40" cy="100" r="4" />
+    <circle cx="40" cy="150" r="4" />
+    <circle cx="40" cy="220" r="4" />
+    <circle cx="560" cy="100" r="4" />
+    <circle cx="560" cy="150" r="4" />
+    <circle cx="100" cy="40" r="4" />
+    <circle cx="500" cy="40" r="4" />
+    <circle cx="100" cy="560" r="4" />
+    <circle cx="500" cy="560" r="4" />
+  </g>
+
+  <!-- IC Chip Package / Substrate -->
+  <rect x="180" y="180" width="240" height="240" rx="20" fill="url(#chipMetal)" stroke="#0ea5e9" stroke-width="2" stroke-opacity="0.5" filter="drop-shadow(0 20px 30px rgba(0,0,0,0.8))" />
+
+  <!-- Gold Bonding Pads / Pins on chip boundary -->
+  <g fill="url(#goldPin)">
+    <!-- Top Pins -->
+    <rect x="210" y="172" width="12" height="12" rx="2" />
+    <rect x="235" y="172" width="12" height="12" rx="2" />
+    <rect x="260" y="172" width="12" height="12" rx="2" />
+    <rect x="285" y="172" width="12" height="12" rx="2" />
+    <rect x="310" y="172" width="12" height="12" rx="2" />
+    <rect x="335" y="172" width="12" height="12" rx="2" />
+    <rect x="360" y="172" width="12" height="12" rx="2" />
+    <rect x="385" y="172" width="12" height="12" rx="2" />
+
+    <!-- Bottom Pins -->
+    <rect x="210" y="416" width="12" height="12" rx="2" />
+    <rect x="235" y="416" width="12" height="12" rx="2" />
+    <rect x="260" y="416" width="12" height="12" rx="2" />
+    <rect x="285" y="416" width="12" height="12" rx="2" />
+    <rect x="310" y="416" width="12" height="12" rx="2" />
+    <rect x="335" y="416" width="12" height="12" rx="2" />
+    <rect x="360" y="416" width="12" height="12" rx="2" />
+    <rect x="385" y="416" width="12" height="12" rx="2" />
+
+    <!-- Left Pins -->
+    <rect x="172" y="210" width="12" height="12" rx="2" />
+    <rect x="172" y="235" width="12" height="12" rx="2" />
+    <rect x="172" y="260" width="12" height="12" rx="2" />
+    <rect x="172" y="285" width="12" height="12" rx="2" />
+    <rect x="172" y="310" width="12" height="12" rx="2" />
+    <rect x="172" y="335" width="12" height="12" rx="2" />
+    <rect x="172" y="360" width="12" height="12" rx="2" />
+    <rect x="172" y="385" width="12" height="12" rx="2" />
+
+    <!-- Right Pins -->
+    <rect x="416" y="210" width="12" height="12" rx="2" />
+    <rect x="416" y="235" width="12" height="12" rx="2" />
+    <rect x="416" y="260" width="12" height="12" rx="2" />
+    <rect x="416" y="285" width="12" height="12" rx="2" />
+    <rect x="416" y="310" width="12" height="12" rx="2" />
+    <rect x="416" y="335" width="12" height="12" rx="2" />
+    <rect x="416" y="360" width="12" height="12" rx="2" />
+    <rect x="416" y="385" width="12" height="12" rx="2" />
+  </g>
+
+  <!-- Silicon Die (Inner Core) -->
+  <rect x="220" y="220" width="160" height="160" rx="10" fill="#090d16" stroke="#38bdf8" stroke-width="1.5" />
+
+  <!-- Microarchitecture Blocks -->
+  <g font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" fill="#94a3b8">
+    <!-- ALU Block -->
+    <rect x="230" y="230" width="65" height="40" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+    <text x="262" y="254" fill="#38bdf8">ALU</text>
+
+    <!-- Reg File Block -->
+    <rect x="305" y="230" width="65" height="40" rx="4" fill="#1e293b" stroke="#818cf8" stroke-width="1" />
+    <text x="337" y="254" fill="#818cf8">REG FILE</text>
+
+    <!-- Control Unit -->
+    <rect x="230" y="280" width="140" height="35" rx="4" fill="#1e293b" stroke="#f472b6" stroke-width="1" />
+    <text x="300" y="302" fill="#f472b6">CONTROL UNIT (MAIN &amp; ALU)</text>
+
+    <!-- Memory Interface -->
+    <rect x="230" y="325" width="140" height="45" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="1" />
+    <text x="300" y="345" fill="#34d399">RV32I DATAPATH</text>
+    <text x="300" y="358" font-size="8" fill="#64748b">92.78 MHz @ CYCLONE V</text>
+  </g>
+
+  <!-- Pin 1 Marker -->
+  <circle cx="200" cy="200" r="5" fill="#38bdf8" />
+
+  <!-- Badge Top -->
+  <g transform="translate(300, 130)">
+    <rect x="-80" y="-16" width="160" height="32" rx="16" fill="#0f172a" stroke="#0284c7" stroke-width="1.5" />
+    <text x="0" y="5" font-family="sans-serif" font-size="12" font-weight="800" text-anchor="middle" fill="#38bdf8" letter-spacing="2">
+      RISC-V (RV32I)
+    </text>
+  </g>
+
+  <!-- Badge Bottom -->
+  <g transform="translate(300, 480)">
+    <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
+    <text x="0" y="5" font-family="sans-serif" font-size="12" font-weight="800" text-anchor="middle" fill="#a5b4fc" letter-spacing="1.5">
+      VLSI &amp; FPGA CORE
+    </text>
+  </g>
+</svg>

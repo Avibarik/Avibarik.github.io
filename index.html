@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avi Barik | Developer Portfolio</title>
-  <meta name="description" content="Avi Barik - Personal portfolio showcasing modern web applications, full-stack software development, and open-source projects." />
+  <title>Avinash Barik | ECE • VLSI • RISC-V • Embedded Systems</title>
+  <meta name="description" content="Portfolio of Avinash Barik (Avi) - Electronics & Communication Engineering student into VLSI Design, RISC-V Computer Architecture, and FPGA Synthesis." />
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Avi Barik | Developer Portfolio" />
-  <meta property="og:description" content="Personal portfolio of Avi Barik showcasing software projects, tech stack, and experience." />
+  <meta property="og:title" content="Avinash Barik | ECE • VLSI • RISC-V Portfolio" />
+  <meta property="og:description" content="Hardware & digital design portfolio featuring 32-bit RISC-V processor synthesized on Intel Cyclone V FPGA." />
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -25,13 +25,14 @@
         extend: {
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
             brand: {
               50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
             }
           }
         }
@@ -45,32 +46,35 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans selection:bg-blue-600 selection:text-white antialiased transition-colors duration-300">
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 antialiased transition-colors duration-300">
 
   <!-- Ambient Glowing Background Elements -->
   <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-glow-1 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-glow-2 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-glow-1 rounded-full blur-3xl"></div>
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-glow-1 rounded-full blur-3xl opacity-60"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-glow-2 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-glow-1 rounded-full blur-3xl opacity-40"></div>
   </div>
 
   <!-- Navigation Bar -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Brand / Logo -->
-      <a href="#hero" class="flex items-center gap-2 text-xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 font-mono text-base">
-          &lt;/&gt;
+      <a href="#hero" class="flex items-center gap-2.5 text-xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-sky-500/20 font-mono text-sm border border-sky-400/30">
+          <i data-lucide="cpu" class="w-5 h-5"></i>
         </span>
-        <span id="nav-brand-name">Portfolio</span>
+        <div class="flex flex-col">
+          <span id="nav-brand-name" class="font-bold text-white text-base sm:text-lg leading-tight">Avinash Barik</span>
+          <span class="text-[11px] font-mono text-sky-400 font-semibold tracking-wider uppercase">ECE &bull; VLSI &bull; RISC-V</span>
+        </div>
       </a>
 
       <!-- Desktop Nav Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#about" class="nav-link hover:text-white transition-colors">About</a>
         <a href="#skills" class="nav-link hover:text-white transition-colors">Skills</a>
-        <a href="#projects" class="nav-link hover:text-white transition-colors">Projects</a>
-        <a href="#experience" class="nav-link hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="nav-link hover:text-white transition-colors">RISC-V & Projects</a>
+        <a href="#experience" class="nav-link hover:text-white transition-colors">Hardware Experience</a>
         <a href="#contact" class="nav-link hover:text-white transition-colors">Contact</a>
       </nav>
 
@@ -81,10 +85,10 @@
           <i data-lucide="sun-moon" class="w-5 h-5"></i>
         </button>
 
-        <!-- Resume / CTA Link -->
-        <a id="resume-btn" href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-5 py-2.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all">
+        <!-- Social CTA Link -->
+        <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 px-5 py-2.5 rounded-xl shadow-lg shadow-sky-500/25 transition-all">
+          <i data-lucide="mail" class="w-4 h-4"></i>
           <span>Get in Touch</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
 
@@ -103,9 +107,9 @@
     <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800/80 px-4 pt-3 pb-6 space-y-3">
       <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">About</a>
       <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Skills</a>
-      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Projects</a>
-      <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Experience</a>
-      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Contact</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">RISC-V & Projects</a>
+      <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Hardware Experience</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium">Contact & Socials</a>
     </div>
   </header>
 
@@ -116,132 +120,132 @@
         <!-- Hero Text -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-6">
           <!-- Status pill -->
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-sky-500/30 text-sky-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="personal-status">Available for new opportunities</span>
+            <span id="personal-status">Open to VLSI & Hardware Opportunities</span>
           </div>
 
           <!-- Headline -->
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Hi, I'm <span id="hero-name" class="gradient-text">Avi Barik</span>
+            Hi, I'm <span id="hero-name" class="gradient-text">Avinash Barik</span>
             <br />
-            <span class="text-slate-300 text-2xl sm:text-3xl lg:text-4xl font-bold">
-              I am a <span id="typing-text">Developer</span><span class="typing-cursor"></span>
+            <span class="text-slate-300 text-xl sm:text-2xl lg:text-3xl font-bold">
+              Focusing on <span id="typing-text" class="text-sky-400">VLSI & RISC-V</span><span class="typing-cursor"></span>
             </span>
           </h1>
 
           <!-- Bio -->
-          <p id="hero-bio" class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Passionate developer crafting modern, high-performance web applications and distributed systems. Committed to writing clean, maintainable code with delightful user experiences.
+          <p id="hero-bio" class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Electronics & Communication Engineering (ECE) student passionate about digital design, computer architecture, and embedded systems. Experienced in designing processor architectures with Verilog HDL, timing closure on FPGAs (Intel Cyclone V), and embedded firmware.
           </p>
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#projects" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all">
-              <i data-lucide="layers" class="w-5 h-5"></i>
-              <span>View Projects</span>
+            <a href="#projects" class="inline-flex items-center gap-2 bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-sky-500/25 transition-all">
+              <i data-lucide="microchip" class="w-5 h-5"></i>
+              <span>Explore RISC-V Core</span>
             </a>
             <a href="#contact" class="inline-flex items-center gap-2 glass-panel hover:bg-slate-800 text-slate-200 font-semibold px-6 py-3.5 rounded-xl border border-slate-700/80 transition-all">
               <i data-lucide="mail" class="w-5 h-5"></i>
-              <span>Contact Me</span>
+              <span>Contact & Socials</span>
             </a>
           </div>
 
           <!-- Social Badges -->
-          <div class="flex items-center justify-center lg:justify-start gap-3 pt-4">
-            <a id="social-github" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-blue-500/50 transition-colors">
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2">
+            <a id="social-github" href="https://github.com/avibarik" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-sky-500/50 transition-colors">
               <i data-lucide="github" class="w-5 h-5"></i>
             </a>
-            <a id="social-linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-blue-500/50 transition-colors">
+            <a id="social-linkedin" href="https://linkedin.com/in/avibarik" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-sky-500/50 transition-colors">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
-            <a id="social-twitter" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-blue-500/50 transition-colors">
+            <a id="social-twitter" href="https://twitter.com/avibarik" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-sky-500/50 transition-colors">
               <i data-lucide="twitter" class="w-5 h-5"></i>
             </a>
-            <a id="social-email" href="mailto:alex@example.com" aria-label="Email" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-blue-500/50 transition-colors">
+            <a id="social-email" href="mailto:barikavinash2003@gmail.com" aria-label="Email" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-white hover:border-sky-500/50 transition-colors">
               <i data-lucide="mail" class="w-5 h-5"></i>
             </a>
           </div>
         </div>
 
-        <!-- Hero Graphic / Avatar -->
+        <!-- Hero Graphic (Custom VLSI Silicon Die / Processor Visual) -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
-            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-2xl animate-pulse"></div>
-            <div class="relative w-full h-full rounded-3xl overflow-hidden glass-panel p-2 shadow-2xl border border-slate-700/60">
-              <img id="hero-avatar" src="assets/images/avatar-placeholder.svg" alt="Avi Barik" class="w-full h-full object-cover rounded-2xl" />
+          <div class="relative w-80 h-80 sm:w-96 sm:h-96">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/30 to-indigo-500/20 blur-3xl animate-pulse"></div>
+            <div class="relative w-full h-full rounded-3xl overflow-hidden glass-panel p-2 shadow-2xl border border-sky-500/30">
+              <img id="hero-avatar" src="assets/images/chip-graphic.svg" alt="Avinash Barik - VLSI & RISC-V Core" class="w-full h-full object-contain rounded-2xl" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Highlights -->
+    <!-- Stats Highlights (Hardware & Timing Closure Metrics) -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div id="stats-container" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <!-- Rendered via JS -->
+        <!-- Rendered via JS from config.js -->
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center mb-14">
-        <span class="text-xs uppercase tracking-widest font-bold text-blue-400">Get To Know Me</span>
+        <span class="text-xs uppercase tracking-widest font-bold text-sky-400">Background</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">About Me</h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-7 space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
           <p id="about-bio">
-            I am a full-stack software engineer with a deep passion for building scalable, elegant, and maintainable software. I enjoy tackling complex architectural problems and delivering polished digital experiences.
+            I am an Electronics & Communication Engineering (ECE) student driven by a deep curiosity for how high-level software instructions translate into digital logic gates and physical silicon transitions.
           </p>
           <p>
-            When I'm not writing code, you can find me contributing to open-source software, diving into developer tooling, writing technical articles, or experimenting with new web technologies.
+            My work revolves around digital IC design and hardware description languages (Verilog HDL). Recently, I built and verified a complete single-cycle 32-bit RISC-V (RV32I) processor core, successfully achieving timing closure at <span class="text-sky-400 font-semibold font-mono">92.78 MHz Fmax</span> on an Intel Cyclone V FPGA.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             <div class="flex items-center gap-3">
-              <span class="p-2 rounded-xl bg-blue-500/10 text-blue-400">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              <span class="p-2.5 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
               </span>
               <div>
-                <span class="text-xs text-slate-400 block font-medium">Location</span>
-                <span id="personal-location" class="text-sm font-semibold text-white">San Francisco, CA / Remote</span>
+                <span class="text-xs text-slate-400 block font-medium">Education</span>
+                <span class="text-sm font-semibold text-white">B.Tech in ECE</span>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <span class="p-2 rounded-xl bg-purple-500/10 text-purple-400">
-                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              <span class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
               </span>
               <div>
-                <span class="text-xs text-slate-400 block font-medium">Specialization</span>
-                <span class="text-sm font-semibold text-white">Full Stack & Cloud Architecture</span>
+                <span class="text-xs text-slate-400 block font-medium">Core Focus</span>
+                <span class="text-sm font-semibold text-white">VLSI, RISC-V & FPGA Flow</span>
               </div>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-5">
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-4">
             <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i data-lucide="terminal" class="w-5 h-5 text-blue-400"></i>
-              <span>Core Philosophy</span>
+              <i data-lucide="circuit-board" class="w-5 h-5 text-sky-400"></i>
+              <span>Engineering Principles</span>
             </h3>
             <ul class="space-y-3 text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
-                <span>Clean, self-documenting code over clever hacks.</span>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
+                <span><strong>Synthesizable RTL:</strong> Clean, deterministic Verilog avoiding latch inference.</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
-                <span>Performance-first mindset from architecture to bundle size.</span>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
+                <span><strong>Rigorous Verification:</strong> Corner-case verification of RAW data hazards, sign extension, and arithmetic overflow.</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
-                <span>Accessibility and delightful micro-interactions for every user.</span>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
+                <span><strong>Timing Closure:</strong> Design-for-timing using Synopsys Design Constraints (SDC) and static timing analysis.</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
-                <span>Continuous learning and community collaboration.</span>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0"></i>
+                <span><strong>Silicon Efficiency:</strong> Minimizing logic footprints and ALM consumption on target FPGA devices.</span>
               </li>
             </ul>
           </div>
@@ -252,8 +256,8 @@
     <!-- Skills Section -->
     <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center mb-14">
-        <span class="text-xs uppercase tracking-widest font-bold text-blue-400">Capabilities</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Technical Skills</h2>
+        <span class="text-xs uppercase tracking-widest font-bold text-sky-400">Core Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Technical Skills & Toolchain</h2>
       </div>
 
       <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -264,8 +268,8 @@
     <!-- Projects Section -->
     <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center mb-10">
-        <span class="text-xs uppercase tracking-widest font-bold text-blue-400">Portfolio</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Featured Projects</h2>
+        <span class="text-xs uppercase tracking-widest font-bold text-sky-400">Featured Work</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">RISC-V & Digital Hardware Projects</h2>
       </div>
 
       <!-- Category Filter Tabs -->
@@ -273,17 +277,14 @@
         <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-blue-600 text-white transition-all shadow-md" data-filter="All">
           All Projects
         </button>
-        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Full Stack">
-          Full Stack
+        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Computer Architecture">
+          Computer Architecture
         </button>
-        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Frontend">
-          Frontend
+        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Digital Verification">
+          Digital Verification
         </button>
-        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Cloud">
-          Cloud / DevOps
-        </button>
-        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="AI">
-          AI & Tools
+        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="VLSI">
+          VLSI / Digital IC
         </button>
       </div>
 
@@ -293,100 +294,202 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Experience & Architecture Showcase Section -->
+    <section id="experience" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center mb-14">
-        <span class="text-xs uppercase tracking-widest font-bold text-blue-400">Career History</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Experience & Education</h2>
+        <span class="text-xs uppercase tracking-widest font-bold text-sky-400">Hardware Journey & Milestones</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Hardware Experience & Verification Graphics</h2>
       </div>
 
-      <div id="experience-timeline" class="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800">
-        <!-- Hydrated dynamically from config.js -->
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="text-center mb-14">
-        <span class="text-xs uppercase tracking-widest font-bold text-blue-400">Let's Connect</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Get In Touch</h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Contact Info Side -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="glass-panel p-8 rounded-3xl border border-slate-800 space-y-6">
-            <h3 class="text-2xl font-bold text-white">Have a project or opportunity?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              I am open to full-time roles, contracts, and exciting open-source collaborations. Feel free to drop a message!
-            </p>
-
-            <div class="space-y-4 pt-2">
-              <a id="footer-email" href="mailto:alex@example.com" class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-800/80 transition-colors">
-                <span class="p-3 rounded-xl bg-blue-500/10 text-blue-400">
-                  <i data-lucide="mail" class="w-5 h-5"></i>
-                </span>
-                <div>
-                  <div class="text-xs text-slate-400 font-medium">Email</div>
-                  <div class="text-sm font-semibold text-white">alex.morgan.dev@example.com</div>
-                </div>
-              </a>
-
-              <a id="footer-github" href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-800/80 transition-colors">
-                <span class="p-3 rounded-xl bg-purple-500/10 text-purple-400">
-                  <i data-lucide="github" class="w-5 h-5"></i>
-                </span>
-                <div>
-                  <div class="text-xs text-slate-400 font-medium">GitHub</div>
-                  <div class="text-sm font-semibold text-white">github.com/alexmorgan</div>
-                </div>
-              </a>
-
-              <a id="footer-linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-800/80 transition-colors">
-                <span class="p-3 rounded-xl bg-sky-500/10 text-sky-400">
-                  <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </span>
-                <div>
-                  <div class="text-xs text-slate-400 font-medium">LinkedIn</div>
-                  <div class="text-sm font-semibold text-white">linkedin.com/in/alexmorgan</div>
-                </div>
-              </a>
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Timeline column -->
+        <div class="lg:col-span-5">
+          <div id="experience-timeline" class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800">
+            <!-- Hydrated dynamically from config.js -->
           </div>
         </div>
 
-        <!-- Contact Form Side -->
-        <div class="lg:col-span-7">
-          <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800">
-            <div id="form-status" class="hidden mb-6"></div>
-
-            <form id="contact-form" class="space-y-5">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
-                  <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors text-sm" />
-                </div>
-                <div>
-                  <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Email</label>
-                  <input type="email" id="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors text-sm" />
-                </div>
+        <!-- Graphics & Synthesis Report Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Synthesis Table Card -->
+          <div class="glass-panel p-6 rounded-3xl border border-slate-800">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="p-2 rounded-lg bg-sky-500/10 text-sky-400">
+                  <i data-lucide="gauge" class="w-5 h-5"></i>
+                </span>
+                <h3 class="text-base font-bold text-white">Intel Cyclone V FPGA Synthesis Closure</h3>
               </div>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full font-semibold">
+                Timing Met: +9.22 ns Slack
+              </span>
+            </div>
 
-              <div>
-                <label for="subject" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Subject</label>
-                <input type="text" id="subject" required placeholder="Project Inquiry / Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors text-sm" />
+            <div class="overflow-x-auto text-xs font-mono">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="text-slate-400 border-b border-slate-800">
+                    <th class="py-2 px-3">Synthesis Parameter</th>
+                    <th class="py-2 px-3 text-sky-400">Result</th>
+                    <th class="py-2 px-3 text-slate-400">Context / Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 text-slate-200">
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-white">Max Clock Freq (Fmax)</td>
+                    <td class="py-2.5 px-3 text-emerald-400 font-bold">92.78 MHz</td>
+                    <td class="py-2.5 px-3 text-slate-400">Worst-case corner (Slow 1.1V, 85&deg;C)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-white">Logic Utilization</td>
+                    <td class="py-2.5 px-3 text-sky-400 font-bold">186 ALMs (&lt; 1%)</td>
+                    <td class="py-2.5 px-3 text-slate-400">Highly compact logic footprint</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-white">Dedicated Registers</td>
+                    <td class="py-2.5 px-3 text-purple-400 font-bold">334 D-FFs</td>
+                    <td class="py-2.5 px-3 text-slate-400">PC, 32x32 register file, control</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-white">Target FPGA Device</td>
+                    <td class="py-2.5 px-3 text-amber-400 font-bold">5CSEBA6U19C6</td>
+                    <td class="py-2.5 px-3 text-slate-400">Intel Cyclone V SE FPGA</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-white">Clock Constraint (SDC)</td>
+                    <td class="py-2.5 px-3 text-sky-400 font-bold">50.00 MHz (20 ns)</td>
+                    <td class="py-2.5 px-3 text-slate-400">Met with zero timing violations</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Waveform & Datapath Visual Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Waveform Card -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5">
+                  <i data-lucide="activity" class="w-4 h-4"></i> GTKWave Simulation
+                </span>
+                <span class="text-[10px] text-slate-400">iverilog verification</span>
               </div>
-
-              <div>
-                <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Message</label>
-                <textarea id="message" rows="5" required placeholder="Tell me about your project or inquiry..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors text-sm resize-none"></textarea>
+              <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800 h-36">
+                <img src="assets/images/riscv-waveform.png" alt="GTKWave Verification Waveform" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Verifies arithmetic, negative two's complement, and RAW data dependency writeback in cycles 1 &amp; 2.
+              </p>
+            </div>
 
-              <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2">
-                <span>Send Message</span>
-                <i data-lucide="send" class="w-4 h-4"></i>
-              </button>
-            </form>
+            <!-- Datapath Card -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
+                  <i data-lucide="git-branch" class="w-4 h-4"></i> Single-Cycle Datapath
+                </span>
+                <span class="text-[10px] text-slate-400">RV32I Architecture</span>
+              </div>
+              <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800 h-36">
+                <img src="assets/images/riscv-datapath.png" alt="Single-Cycle RISC-V Datapath Architecture" class="w-full h-full object-contain p-1 hover:scale-105 transition-transform duration-300" />
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Integrated Harvard architecture: instruction memory, 32x32 register file, 32-bit ALU, and control unit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Contact & Socials Section (Form Removed) -->
+    <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold text-sky-400">Let's Connect</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Get In Touch</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+          I am actively seeking internships, research collaborations, and full-time entry-level hardware / VLSI engineering opportunities. Feel free to reach out directly!
+        </p>
+      </div>
+
+      <!-- Contact Hub Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Email Direct Card with Copy Button -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="p-3 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </span>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">Direct Email</div>
+              <div id="contact-display-email" class="text-sm sm:text-base font-semibold text-white break-all">barikavinash2003@gmail.com</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2">
+            <a id="contact-card-email" href="mailto:barikavinash2003@gmail.com" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Send Email</span>
+            </a>
+            <button id="copy-email-btn" type="button" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-700 transition-colors">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy Email</span>
+            </button>
+          </div>
+          <div id="copy-email-toast" class="hidden text-xs text-emerald-400 flex items-center gap-1.5 font-medium">
+            <i data-lucide="check" class="w-3.5 h-3.5"></i> Copied to clipboard!
+          </div>
+        </div>
+
+        <!-- GitHub Card -->
+        <a id="contact-card-github" href="https://github.com/avibarik" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift flex flex-col justify-between group">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <i data-lucide="github" class="w-6 h-6"></i>
+            </span>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">GitHub Profile</div>
+              <div class="text-base font-semibold text-white group-hover:text-sky-400 transition-colors">github.com/avibarik</div>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center justify-between pt-2 border-t border-slate-800/80">
+            <span>Explore Verilog RTL, FPGA &amp; RISC-V repos</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-sky-400"></i>
+          </div>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a id="contact-card-linkedin" href="https://linkedin.com/in/avibarik" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift flex flex-col justify-between group">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="p-3 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </span>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">LinkedIn Network</div>
+              <div class="text-base font-semibold text-white group-hover:text-sky-400 transition-colors">linkedin.com/in/avibarik</div>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center justify-between pt-2 border-t border-slate-800/80">
+            <span>Connect for hardware roles &amp; engineering posts</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-sky-400"></i>
+          </div>
+        </a>
+
+        <!-- Location & Availability Card -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift flex flex-col justify-between">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </span>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">Location &amp; Availability</div>
+              <div class="text-base font-semibold text-white">India &bull; Open to Relocation / Remote</div>
+            </div>
+          </div>
+          <div class="text-xs text-emerald-400 flex items-center gap-2 pt-2 border-t border-slate-800/80">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Ready for Immediate VLSI / Embedded Opportunities</span>
           </div>
         </div>
       </div>
@@ -397,14 +500,16 @@
   <footer class="glass-panel border-t border-slate-800/80 mt-20 py-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
       <div class="flex items-center gap-2">
-        <span class="w-6 h-6 rounded-lg bg-blue-600 flex items-center justify-center text-white font-mono text-xs">
-          &lt;/&gt;
+        <span class="w-7 h-7 rounded-lg bg-sky-600 flex items-center justify-center text-white font-mono text-xs font-bold">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
         </span>
-        <span>© <span id="copyright-year">2026</span> <span id="footer-name">Avi Barik</span>. All rights reserved.</span>
+        <span>&copy; <span id="copyright-year">2026</span> <span id="footer-name" class="text-slate-200 font-medium">Avinash Barik</span>. ECE &bull; VLSI &bull; RISC-V.</span>
       </div>
 
       <div class="flex items-center gap-6">
-        <a href="#hero" class="hover:text-white transition-colors flex items-center gap-1.5">
+        <a id="footer-github" href="https://github.com/avibarik" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+        <a id="footer-linkedin" href="https://linkedin.com/in/avibarik" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="#hero" class="hover:text-white transition-colors flex items-center gap-1.5 text-sky-400">
           <span>Back to Top</span>
           <i data-lucide="arrow-up" class="w-4 h-4"></i>
         </a>
